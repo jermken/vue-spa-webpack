@@ -4,6 +4,8 @@ const htmlWebpackPlugin = require('html-webpack-plugin')
 const cleanWebpackPlugin = require('clean-webpack-plugin')
 const baseConf = require('./webpack.base.config')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = merge(baseConf, {
     mode: process.env.NODE_ENV,
@@ -31,5 +33,15 @@ module.exports = merge(baseConf, {
                 viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
             }
         })
-    ]
+    ],
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                cache: true,
+                parallel: true,
+                sourceMap: true
+            }),
+            new OptimizeCSSAssetsPlugin({})
+        ]
+    }
 })
