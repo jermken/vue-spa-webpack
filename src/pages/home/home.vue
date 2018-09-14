@@ -1,5 +1,5 @@
 <template>
-    <div>这是首页内容</div>
+    <div class="home-container">这是首页内容</div>
 </template>
 <script>
 export default {
@@ -11,3 +11,8 @@ export default {
     }
 }
 </script>
+<style lang="scss">
+.home-container {
+    font-size: 24px;
+}
+</style>
