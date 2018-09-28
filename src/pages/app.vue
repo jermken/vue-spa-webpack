@@ -1,7 +1,7 @@
 <template>
     <div>
         <img src="../img/demo1.png"/>
-        <div class="demo1"></div>
+        <div class="title">{{msg}}</div>
         <router-link to="/home">首页</router-link>
         <router-link to="/my">我的</router-link>
         <router-view></router-view>
@@ -14,7 +14,7 @@ export default {
     name: 'App',
     data() {
         return {
-            a: '21324'
+            msg: 'this is a vue unit test demo'
         }
     },
     mounted() {

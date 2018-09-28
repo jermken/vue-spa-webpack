@@ -7,7 +7,8 @@ module.exports = {
         index: path.join(__dirname, './src/entry/index.js')
     },
     output: {
-        chunkFilename: 'js/[name].bundle.[hash:8].js'
+        path: path.resolve(__dirname, './dist'),
+        filename: '[name].js'
     },
     module: {
         rules: [
@@ -51,5 +52,11 @@ module.exports = {
     },
     plugins:[
         new VueLoaderPlugin()
-    ]
+    ],
+    resolve: {
+        extensions: ['.vue', '.js'],
+        alias: {
+            '@': path.resolve(__dirname, 'src')
+        }
+    }
 }

@@ -2,6 +2,7 @@
     "presets": ["env"],
     "plugins": [
         "transform-runtime",
-        "syntax-dynamic-import"
+        "syntax-dynamic-import",
+        "istanbul"
     ]
 }
